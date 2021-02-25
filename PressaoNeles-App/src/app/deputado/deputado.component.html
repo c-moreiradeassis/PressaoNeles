@@ -1,0 +1,141 @@
+<div class="form-inline">
+  <label for="txt-nome" class="mb-2 mr-sm-2">Nome</label>
+  <input type="text" id="txt-nome" class="form-control mb-2 mr-sm-2">
+  <button type="submit" class="btn btn-warning mb-2"><i class="fa fa-search"></i>&nbsp;Buscar</button>
+</div>
+
+<div class="d-flex">
+  <div class="form-inline mr-auto"></div>
+    <div>
+      <button class="btn btn-primary" (click)="novoDeputado(template)"><i class="fa fa-plus-circle"></i>&nbsp;Novo</button>
+    </div>
+</div>
+
+<br>
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <td>Nome</td>
+      <td>Email</td>
+      <td>Facebook</td>
+      <td>Twitter</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of deputados | paginate: { itemsPerPage: 10, currentPage: p }">
+      <td>{{ item.nome }}</td>
+      <td>{{ item.email }}</td>
+      <td>{{ item.facebook }}</td>
+      <td>{{ item.twitter }}</td>
+      <td class="text-center">
+        <button class="btn btn-sm btn-purple" tooltip="Editar" (click)="editarForm(item, template)"><i class="fa fa-edit"></i></button>
+      </td>
+      <td class="text-center">
+        <button class="btn btn-sm btn-danger" tooltip="Excluir" (click)="excluirDeputado(item, confirm)"><i class="fa fa-eraser"></i></button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div bsModal #template="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dialog-sizes-name1">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 id="dialog-sizes-name1" class="modal-title pull-left">Deputado</h5>
+        <button type="button" class="close pull-right" (click)="template.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="registerForm">
+          <div class="form-row">
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
+              <input type="text" class="form-control" formControlName="nome" placeholder="Nome" aria-label="Nome" 
+                aria-describedby="basic-addon1" 
+                [ngClass]="{ 'is-invalid': registerForm.get('nome').invalid && registerForm.get('nome').touched}">
+            </div>
+            <div *ngIf="registerForm.get('nome').invalid && registerForm.get('nome').touched">
+              <div *ngIf="registerForm.get('nome').errors.required" class="text-danger">
+                Digite o nome.
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon2"><i class="fa fa-at"></i></span>
+              <input type="text" class="form-control" formControlName="email" placeholder="Email" aria-label="Email" 
+                aria-describedby="basic-addon2"
+                [ngClass]="{ 'is-invalid': registerForm.get('email').invalid && registerForm.get('email').touched}">
+              <div *ngIf="registerForm.get('email').invalid && registerForm.get('email').touched">
+                <div *ngIf="registerForm.get('email').errors.required" class="text-danger">
+                  Digite o email.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon3"><i class="fab fa-facebook"></i></span>
+              <input type="text" class="form-control" formControlName="facebook" placeholder="Facebook" aria-label="Facebook"
+                aria-describedby="basic-addon3"
+                [ngClass]="{ 'is-invalid': registerForm.get('facebook').invalid && registerForm.get('facebook').touched}">
+              <div *ngIf="registerForm.get('facebook').invalid && registerForm.get('facebook').touched">
+                <div *ngIf="registerForm.get('facebook').errors.required" class="text-danger">
+                  Digite o Facebook.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon3"><i class="fab fa-twitter"></i></span>
+              <input type="text" class="form-control" formControlName="twitter" placeholder="Twitter" aria-label="Twitter" 
+                aria-describedby="basic-addon3"
+                [ngClass]="{ 'is-invalid': registerForm.get('twitter').invalid && registerForm.get('twitter').touched}">
+              <div *ngIf="registerForm.get('twitter').invalid && registerForm.get('twitter').touched">
+                <div *ngIf="registerForm.get('twitter').errors.required" class="text-danger">
+                  Digite o Twitter.
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" (click)="template.hide()">Fechar</button>
+        <button class="btn btn-success" (click)="postDeputado(template)">Salvar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div bsModal #confirm="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-describedby="dialog-sizes-name1">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content"> 
+      <div class="modal-header">
+        <h5 class="modal-title pull left">Deputado</h5>
+        <button type="button" class="close pull-right" (click)="confirm.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>{{ bodyDeletarDeputado }}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="confirm.hide()">Não</button>
+        <button type="button" class="btn btn-danger" (click)="confirmDelete(confirm)">Sim</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>
+
+<pagination-controls previousLabel="Anterior" nextLabel="Próxima" (pageChange)="p = $event"></pagination-controls>

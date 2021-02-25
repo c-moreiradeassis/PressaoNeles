@@ -1,0 +1,15 @@
+C:\Users\ALEXANDRE\Documents\Projetos\PressaoNeles\PressaoNeles.Repositorio\bin\Debug\net5.0\PressaoNeles.Repositorio.deps.json
+C:\Users\ALEXANDRE\Documents\Projetos\PressaoNeles\PressaoNeles.Repositorio\bin\Debug\net5.0\PressaoNeles.Repositorio.dll
+C:\Users\ALEXANDRE\Documents\Projetos\PressaoNeles\PressaoNeles.Repositorio\bin\Debug\net5.0\ref\PressaoNeles.Repositorio.dll
+C:\Users\ALEXANDRE\Documents\Projetos\PressaoNeles\PressaoNeles.Repositorio\bin\Debug\net5.0\PressaoNeles.Repositorio.pdb
+C:\Users\ALEXANDRE\Documents\Projetos\PressaoNeles\PressaoNeles.Repositorio\obj\Debug\net5.0\PressaoNeles.Repositorio.csprojAssemblyReference.cache
+C:\Users\ALEXANDRE\Documents\Projetos\PressaoNeles\PressaoNeles.Repositorio\obj\Debug\net5.0\PressaoNeles.Repositorio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ALEXANDRE\Documents\Projetos\PressaoNeles\PressaoNeles.Repositorio\obj\Debug\net5.0\PressaoNeles.Repositorio.AssemblyInfoInputs.cache
+C:\Users\ALEXANDRE\Documents\Projetos\PressaoNeles\PressaoNeles.Repositorio\obj\Debug\net5.0\PressaoNeles.Repositorio.AssemblyInfo.cs
+C:\Users\ALEXANDRE\Documents\Projetos\PressaoNeles\PressaoNeles.Repositorio\obj\Debug\net5.0\PressaoNeles.Repositorio.csproj.CoreCompileInputs.cache
+C:\Users\ALEXANDRE\Documents\Projetos\PressaoNeles\PressaoNeles.Repositorio\obj\Debug\net5.0\PressaoNeles.Repositorio.dll
+C:\Users\ALEXANDRE\Documents\Projetos\PressaoNeles\PressaoNeles.Repositorio\obj\Debug\net5.0\ref\PressaoNeles.Repositorio.dll
+C:\Users\ALEXANDRE\Documents\Projetos\PressaoNeles\PressaoNeles.Repositorio\obj\Debug\net5.0\PressaoNeles.Repositorio.pdb
+C:\Users\ALEXANDRE\Documents\Projetos\PressaoNeles\PressaoNeles.Repositorio\bin\Debug\net5.0\PressaoNeles.Dominio.dll
+C:\Users\ALEXANDRE\Documents\Projetos\PressaoNeles\PressaoNeles.Repositorio\bin\Debug\net5.0\PressaoNeles.Dominio.pdb
+C:\Users\ALEXANDRE\Documents\Projetos\PressaoNeles\PressaoNeles.Repositorio\obj\Debug\net5.0\PressaoNeles.Repositorio.csproj.CopyComplete
